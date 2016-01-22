@@ -15,7 +15,7 @@ class WebsitesController < ApplicationController
 
   def create_photos_from_url(website)
     uri = URI(website.url)
-    protocol_domain = %Q(#{uri.scheme}//#{uri.host})
+    protocol_domain = %Q(#{uri.scheme}://#{uri.host})
     content = Net::HTTP.get(uri)
     doc = Nokogiri::HTML(content)
     photos_doc = doc.css("img")
