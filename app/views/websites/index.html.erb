@@ -1,0 +1,12 @@
+<h1>請輸入網址</h1>
+<%= form_tag '/', method: :get do %>
+  <%= label_tag :url, "網址：" %>
+  <%= url_field_tag :url, nil %>
+  <%= submit_tag "確認" %>
+<% end %>
+<hr/>
+<% if @photos %>
+  <% @photos.each do |photo| %>
+    <%= image_tag(photo.image, {style: "width:100px;"}) %>
+  <% end %>
+<% end %>
