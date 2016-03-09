@@ -1,0 +1,4 @@
+<h2>全部圖片</h2>
+<% @website.photos.each do |photo| %>
+  <%= image_tag(photo.image.url) %>
+<% end %>

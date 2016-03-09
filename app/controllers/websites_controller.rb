@@ -17,6 +17,10 @@ class WebsitesController < ApplicationController
     end
   end
 
+  def show
+    @website = Website.find(params[:id])
+  end
+
   private
 
   def create_photos_from_url(website)
